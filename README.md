@@ -1,70 +1,194 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Todo List React Native App
 
-# Getting Started
+A modern, feature-rich todo list application built with React Native CLI, featuring Material Design principles, persistent storage, and a clean, intuitive user interface.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 📱 Features
 
-## Step 1: Start Metro
+- ✅ **Add Tasks**: Create new todo items with a simple input interface
+- ✅ **Delete Tasks**: Remove tasks with confirmation dialog to prevent accidents
+- ✅ **Mark Complete**: Toggle task completion with visual strikethrough effect
+- ✅ **Edit Tasks**: Tap on any task to edit its text inline
+- ✅ **Separate Sections**: Active and completed tasks are organized in separate sections
+- ✅ **Persistent Storage**: Tasks are saved locally using AsyncStorage
+- ✅ **Statistics**: View total, completed, and pending task counts
+- ✅ **Clear Completed**: Bulk remove all completed tasks
+- ✅ **Material Design**: Clean, professional UI following Google's Material Design guidelines
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 🛠️ Technology Stack
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- **React Native CLI** (Bare Workflow) - Full native control
+- **TypeScript** - Type safety and better developer experience
+- **Zustand** - Lightweight state management
+- **AsyncStorage** - Persistent local data storage
+- **Material Design** - Professional UI/UX principles
 
-```sh
-# Using npm
-npm start
+## 📋 Prerequisites
 
-# OR using Yarn
-yarn start
+Before you begin, ensure you have the following installed:
+
+- **Node.js** (version 14 or higher)
+- **npm** or **yarn**
+- **React Native CLI**: `npm install -g react-native-cli`
+- **Android Studio** (for Android development)
+- **Xcode** (for iOS development - macOS only)
+- **Java Development Kit (JDK)** version 11 or higher
+
+### Android Setup
+- Android Studio with Android SDK
+- Android Virtual Device (AVD) or physical Android device
+- Enable Developer Mode and USB Debugging on physical device
+
+### iOS Setup (macOS only)
+- Xcode (latest version)
+- iOS Simulator or physical iOS device
+- CocoaPods: `sudo gem install cocoapods`
+
+## 🚀 Installation & Setup
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/kavindupbsr/ToDoListTSApp.git
+cd ToDoListTSApp
 ```
 
-## Step 2: Build and run your app
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### 3. Install iOS Dependencies (iOS only)
+```bash
+cd ios
+pod install
+cd ..
+```
+
+## 📱 Running the Application
 
 ### Android
 
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+#### Using Android Emulator:
+1. Start Android Studio
+2. Open AVD Manager and start an Android Virtual Device
+3. Run the app:
+```bash
+npx react-native run-android
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+#### Using Physical Android Device:
+1. Connect your Android device via USB
+2. Enable Developer Mode and USB Debugging
+3. Run the app:
+```bash
+npx react-native run-android
 ```
 
-Then, and every time you update your native dependencies, run:
+### iOS (macOS only)
 
-```sh
-bundle exec pod install
+#### Using iOS Simulator:
+```bash
+npx react-native run-ios
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+#### Using Physical iOS Device:
+1. Open `ios/ToDoListTSApp.xcworkspace` in Xcode
+2. Select your connected iOS device
+3. Click the Run button in Xcode
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+#### Specific iOS Simulator:
+```bash
+npx react-native run-ios --simulator="iPhone 14"
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 🔧 Development Commands
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+### Start Metro Bundler
+```bash
+npx react-native start
+```
 
-## Step 3: Modify your app
+### Reset Metro Cache
+```bash
+npx react-native start --reset-cache
+```
 
-Now that you have successfully run the app, let's make changes!
+### Clean Build (if you encounter issues)
+```bash
+# Android
+cd android
+./gradlew clean
+cd ..
+
+# iOS
+cd ios
+xcodebuild clean
+cd ..
+```
+
+## 📁 Project Structure
+
+```
+ToDoListTSApp/
+├── src/
+│   ├── components/
+│   │   ├── AddTodoForm.tsx      # Form for adding new todos
+│   │   ├── TodoItem.tsx         # Individual todo item component
+│   │   └── TodoList.tsx         # List container with sections
+│   ├── store/
+│   │   └── todoStore.ts         # Zustand store for state management
+│   └── styles/
+│       ├── colors.ts            # Material Design color palette
+│       └── material.ts          # Spacing, typography, elevation
+├── android/                     # Android-specific files
+├── ios/                         # iOS-specific files
+├── App.tsx                      # Main app component
+└── package.json
+```
+
+## 🎨 Design System
+
+The app follows Material Design principles with:
+
+- **Consistent Color Palette**: Primary blue theme with accent colors
+- **Typography Scale**: Standardized font sizes and weights
+- **Spacing System**: 4px grid system for consistent layouts
+- **Elevation**: Shadows and depth for visual hierarchy
+- **Accessibility**: Proper touch targets and screen reader support
+
+## 🔍 Troubleshooting
+
+### Common Issues:
+
+#### Metro bundler issues:
+```bash
+npx react-native start --reset-cache
+```
+
+#### Android build issues:
+```bash
+cd android
+./gradlew clean
+cd ..
+npx react-native run-android
+```
+
+#### iOS build issues:
+```bash
+cd ios
+pod install
+xcodebuild clean
+cd ..
+npx react-native run-ios
+```
+
+## 👨‍💻 Author
+
+**Kavindu Bhanuka**
+- GitHub: [@kavindupbsr](https://github.com/kavindupbsr)
+
+---
+
+**Note**: This app was built as a learning project to demonstrate React Native development skills, state management with Zustand, and Material Design implementation.
 
 Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
 
