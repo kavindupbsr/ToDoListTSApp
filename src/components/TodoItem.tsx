@@ -170,9 +170,12 @@ const styles = StyleSheet.create({
   textContainer: {
     flex: 1,
     marginLeft: spacing.sm,
+    justifyContent: 'center',
   },
   textTouchable: {
     flex: 1,
+    justifyContent: 'center',
+    paddingVertical: spacing.xs,
   },
   todoText: {
     ...typography.body1,
