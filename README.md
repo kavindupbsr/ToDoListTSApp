@@ -125,35 +125,6 @@ xcodebuild clean
 cd ..
 ```
 
-## 📁 Project Structure
-
-```
-ToDoListTSApp/
-├── src/
-│   ├── components/
-│   │   ├── AddTodoForm.tsx      # Form for adding new todos
-│   │   ├── TodoItem.tsx         # Individual todo item component
-│   │   └── TodoList.tsx         # List container with sections
-│   ├── store/
-│   │   └── todoStore.ts         # Zustand store for state management
-│   └── styles/
-│       ├── colors.ts            # Material Design color palette
-│       └── material.ts          # Spacing, typography, elevation
-├── android/                     # Android-specific files
-├── ios/                         # iOS-specific files
-├── App.tsx                      # Main app component
-└── package.json
-```
-
-## 🎨 Design System
-
-The app follows Material Design principles with:
-
-- **Consistent Color Palette**: Primary blue theme with accent colors
-- **Typography Scale**: Standardized font sizes and weights
-- **Spacing System**: 4px grid system for consistent layouts
-- **Elevation**: Shadows and depth for visual hierarchy
-- **Accessibility**: Proper touch targets and screen reader support
 
 ## 🔍 Troubleshooting
 
